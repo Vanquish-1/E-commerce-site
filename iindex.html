@@ -1,0 +1,149 @@
+<?php
+	include("connect.php");
+	if (!isset($_GET["id"])) {
+		header("location:./product.php");
+	}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Now</title>
+	<link rel="stylesheet" type="text/css" href="sstyle.css">
+	<link rel="shortcut icon" href="./images/ubani fav.png">
+</head>
+<body>
+
+<form method="post" action="process.php" align="center">
+
+
+
+<br><br>
+
+<h3>Card Details</h3>
+<br>
+
+<center><h6>Select Card</h6></center>
+<select name="cardtype" required>
+<option value="Debit">Debit Card</option>
+<option value="Credit">Credit Card</option>
+</select>
+<br><br>
+	<input type="text" size="30"  placeholder="Name On Card" name="fn"  maxlength="15" required />
+<br><br>
+<input type="password" size="30" placeholder="Card Number" name="ln"  maxlength="16" required />
+<br><br>
+
+<center><h6>Expiry Date</h6></center>
+<select name="expiry" required>
+<option value="Day" selected>Day</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+
+<select name="dropdown2" required>
+<option value="Year" selected>Year</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="1990">2020</option>
+<option value="1991">2021</option>
+<option value="1992">2022</option>
+<option value="1993">2023</option>
+<option value="1994">2024</option>
+<option value="1995">2025</option>
+<option value="1996">2026</option>
+<option value="1997">2027</option>
+<option value="1998">2028</option>
+<option value="1999">2029</option>
+<option value="2000">2030</option>
+<option value="2001">2031</option>
+<option value="2002">2032</option>
+<option value="2003">2033</option>
+<option value="2004">2034</option>
+<option value="2005">2035</option>
+<option value="2006">2036</option>
+<option value="2007">2037</option>
+<option value="2008">2038</option>
+<option value="2009">2039</option>
+<option value="2010">2040</option>
+<option value="2011">2041</option>
+<option value="2012">2042</option>
+<option value="2013">2043</option>
+<option value="2014">2044</option>
+<option value="2001">2045</option>
+<option value="2002">2046</option>
+<option value="2003">2047</option>
+<option value="2004">2048</option>
+<option value="2005">2049</option>
+<option value="2006">2050</option>
+<option value="2007">2051</option>
+<option value="2008">2052</option>
+<option value="2009">2053</option>
+<option value="2010">2054</option>
+<option value="2011">2055</option>
+<option value="2012">2056</option>
+<option value="2013">2057</option>
+<option value="2014">2058</option>
+<option value="2013">2059</option>
+<option value="2014">2060</option>
+</select>
+
+<br><br>
+<input type="password" size="30" placeholder="Security (CV)" name="cv"  maxlength="3" required />
+<br><br><br><br>
+
+<h3>Customer Details</h3>
+<br>
+<input type="text" size="30"  placeholder="Name" name="n" required />
+<br><br>
+<input type="text" size="30"  placeholder="Email Address" name="e" required />
+<br><br>
+	<input type="text" size="30"  placeholder="Billing Address" name="ba" required />
+<br><br>
+<input type="text" size="30" placeholder="Billing City" name="bc" required />
+<br><br>
+<input type="text" size="30" placeholder="Mobile Number" name="mn" required />
+<br><br>
+	<input type="text" size="30"  placeholder="Zip Code" name="z"  maxlength="6" required />
+<br><br>
+<input type="text" size="30" placeholder="Billing Country" name="cy"  required />
+
+<input type="hidden" name="product_id" value="<?php echo strip_tags(mysqli_real_escape_string($db, $_GET["id"])); ?>">
+<br><br>
+
+<input type="submit" name="submit" value="Submit" />
+
+</form>
+</body>
+</html>
